@@ -8,6 +8,8 @@
 import UIKit
 
 class MainViewController: UIViewController {
+    let viewModel = WeatherViewModel()
+    
     lazy var label: UILabel = {
         let lbl = UILabel()
         lbl.text = "weather"
@@ -27,10 +29,18 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        bind()
         interface()
     }
+    
     func setup() {
         view.backgroundColor = .white
+    }
+    
+    func bind() {
+        let input = WeatherViewModel.Input()
+        let output = viewModel.transform(input: input)
+        
     }
 
     func interface() {
@@ -42,8 +52,6 @@ class MainViewController: UIViewController {
         image.setAnchor(top: label.bottomAnchor, paddingTop: 50.h)
         image.centerX(from: label)
         image.setSize(height: 50, width: 50)
-
     }
-
 }
 

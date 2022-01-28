@@ -6,11 +6,6 @@
 //
 
 import Foundation
-//        MARK: - Temp
-struct ErrorResponse: Decodable {
-    let errorMessage, errorCode: String
-}
-
 
 class NetworkService {
     init(baseUrl: String, route: String = "") {
@@ -112,4 +107,5 @@ class NetworkService {
         
         return response
     }
+
 }
