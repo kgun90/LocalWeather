@@ -22,7 +22,9 @@
 		843A630727A3B89D0056EB10 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843A630627A3B89D0056EB10 /* WeatherService.swift */; };
 		843A630927A3D6E90056EB10 /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843A630827A3D6E90056EB10 /* WeatherViewModel.swift */; };
 		843A630B27A3D70B0056EB10 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843A630A27A3D70B0056EB10 /* ViewModel.swift */; };
-		843A630D27A3D7BA0056EB10 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843A630C27A3D7BA0056EB10 /* Log.swift */; };
+		EB5BA5DA27A50D3E00C51B37 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5BA5D927A50D3E00C51B37 /* Log.swift */; };
+		EB5BA5DC27A5702F00C51B37 /* LocalWeatherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5BA5DB27A5702E00C51B37 /* LocalWeatherTableViewCell.swift */; };
+		EB5BA5DE27A64E9B00C51B37 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5BA5DD27A64E9B00C51B37 /* UIColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,10 +44,12 @@
 		843A630627A3B89D0056EB10 /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
 		843A630827A3D6E90056EB10 /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
 		843A630A27A3D70B0056EB10 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
-		843A630C27A3D7BA0056EB10 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		A655AC2FAC5A99D5B7B48C96 /* Pods-LocalWeather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LocalWeather.debug.xcconfig"; path = "Target Support Files/Pods-LocalWeather/Pods-LocalWeather.debug.xcconfig"; sourceTree = "<group>"; };
 		A8BD036F7477383CE9BC6E3A /* Pods-LocalWeather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LocalWeather.release.xcconfig"; path = "Target Support Files/Pods-LocalWeather/Pods-LocalWeather.release.xcconfig"; sourceTree = "<group>"; };
 		D227DAE76E12E9DC34785174 /* Pods_LocalWeather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LocalWeather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB5BA5D927A50D3E00C51B37 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
+		EB5BA5DB27A5702E00C51B37 /* LocalWeatherTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalWeatherTableViewCell.swift; sourceTree = "<group>"; };
+		EB5BA5DD27A64E9B00C51B37 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				843A62AB27A2170D0056EB10 /* MainViewController.swift */,
+				EB5BA5DB27A5702E00C51B37 /* LocalWeatherTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -135,7 +140,7 @@
 				843A62C327A224B40056EB10 /* NetworkService.swift */,
 				843A62ED27A241630056EB10 /* Device.swift */,
 				843A630427A3B69D0056EB10 /* Key.swift */,
-				843A630C27A3D7BA0056EB10 /* Log.swift */,
+				EB5BA5D927A50D3E00C51B37 /* Log.swift */,
 			);
 			path = Utill;
 			sourceTree = "<group>";
@@ -145,6 +150,7 @@
 			children = (
 				843A62C027A224230056EB10 /* UIView.swift */,
 				843A62EB27A241110056EB10 /* Int.swift */,
+				EB5BA5DD27A64E9B00C51B37 /* UIColor.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -290,10 +296,12 @@
 			files = (
 				843A630727A3B89D0056EB10 /* WeatherService.swift in Sources */,
 				843A62C427A224B40056EB10 /* NetworkService.swift in Sources */,
-				843A630D27A3D7BA0056EB10 /* Log.swift in Sources */,
+				EB5BA5DA27A50D3E00C51B37 /* Log.swift in Sources */,
 				843A62C127A224230056EB10 /* UIView.swift in Sources */,
+				EB5BA5DE27A64E9B00C51B37 /* UIColor.swift in Sources */,
 				843A630927A3D6E90056EB10 /* WeatherViewModel.swift in Sources */,
 				843A630527A3B69D0056EB10 /* Key.swift in Sources */,
+				EB5BA5DC27A5702F00C51B37 /* LocalWeatherTableViewCell.swift in Sources */,
 				843A62AC27A2170D0056EB10 /* MainViewController.swift in Sources */,
 				843A62EC27A241110056EB10 /* Int.swift in Sources */,
 				843A62A827A2170D0056EB10 /* AppDelegate.swift in Sources */,

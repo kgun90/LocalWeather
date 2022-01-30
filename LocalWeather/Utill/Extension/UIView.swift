@@ -45,18 +45,18 @@ extension UIView {
         centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: paddingY.w).isActive = true
     }
     
-    func centerX(from view: UIView, padding: Int = 0) {
+    func setCenterX(from view: UIView, padding: Int = 0) {
         translatesAutoresizingMaskIntoConstraints = false
         centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: padding.w).isActive = true
     }
     
-    func centerY(from view: UIView, padding: Int = 0) {
+    func setCenterY(from view: UIView, padding: Int = 0) {
         translatesAutoresizingMaskIntoConstraints = false
         centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: padding.h).isActive = true
     }
     
 //        MARK: - View의 Size 지정
-    func setSize(height: Int? = nil, width: Int? = nil) {
+    func setSize(width: Int? = nil, height: Int? = nil) {
         translatesAutoresizingMaskIntoConstraints = false
         
         if let width = width {

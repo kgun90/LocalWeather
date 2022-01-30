@@ -14,7 +14,7 @@ struct Key {
     static let units = "metric"
 }
 
-enum Mode: String {
+enum Route: String {
     case weather
     case forecast
 }

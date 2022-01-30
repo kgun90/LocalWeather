@@ -15,33 +15,36 @@ class WeatherViewModel: ViewModel {
     
     
     struct Input {
-        
+        let local: Local
     }
     
     struct Output {
-        
+        let weather: Observable<WeatherResponse>
     }
+    
+    private let weather = PublishRelay<WeatherResponse>()
     
     func transform(input: Input) -> Output {
-        getWeather()
-        return Output()
-    }
+        getWeather(local: input.local)
+        
+      
+        return Output(weather: weather.asObservable())
+    }    
     
-    private func getWeather() {
-        for local in Local.allCases {
-            WeatherService.getWeather(city: local) { res in
-                switch res {
-                case is WeatherResponse:
-                    let model = res as! WeatherResponse
-                    Log.e("\(local.name): \(model.weather[0].weatherDescription)")
-                    
-                case is ErrorResponse:
-                    let e = res as! ErrorResponse
-                    Log.e(e.message)
-                    
-                default:
-                    Log.e("API Request Failed")
-                }
+  
+    private func getWeather(local: Local) {
+        WeatherService.getWeather(city: local) { res in
+            switch res {
+            case is WeatherResponse:
+                let model = res as! WeatherResponse
+                
+                self.weather.accept(model)
+            case is ErrorResponse:
+                let e = res as! ErrorResponse
+                Log.e(e.message)
+                
+            default:
+                Log.e("API Request Failed")
             }
         }
     }

@@ -5,7 +5,7 @@
 //  Created by gkang on 2022/01/28.
 //
 
-import Foundation
+import UIKit
 
 // MARK: - ErrorResponse
 struct ErrorResponse: Codable {
@@ -90,9 +90,9 @@ struct ForecastMain: Codable {
 
 
 struct WeatherImage {
-    let id : Int
+    let id: Int
     
-    var name : String {
+    var name: String {
         switch id {
         case 200...232:
             return "cloud.bolt"
@@ -101,7 +101,7 @@ struct WeatherImage {
         case 500...531:
             return "cloud.rain"
         case 600...622:
-            return "snow"
+            return "cloud.snow"
         case 701...781:
             return "cloud.fog"
         case 800 :
@@ -112,6 +112,26 @@ struct WeatherImage {
             return "cloud"
         default:
             return "cloud"
+        }
+    }
+    
+    var color: UIColor {
+        switch id {
+        case 200...232:
+            return .gray
+        case 300...531:
+            return .blue
+        case 600...781:
+            return .gray
+        case 800:
+            return .orange
+        case 801...802:
+            return .orange
+        case 803...804:
+            return .gray
+        default:
+            return .gray
+            
         }
     }
 }

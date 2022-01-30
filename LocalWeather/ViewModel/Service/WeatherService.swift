@@ -9,7 +9,7 @@ import Foundation
 
 class WeatherService {
     static func getWeather(city: Local, completion: @escaping (Decodable?) -> Void) {
-        let path = Key.path + "/\(Mode.weather.rawValue)"
+        let path = Key.path + "/\(Route.weather.rawValue)"
         
         let query = [
             "appid": Key.secret,
