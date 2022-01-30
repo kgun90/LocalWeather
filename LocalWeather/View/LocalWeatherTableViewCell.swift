@@ -32,8 +32,7 @@ class LocalWeatherTableViewCell: UITableViewCell {
         
        return lbl
     }()
-    
-   
+       
     lazy var weatherImage: UIImageView = {
         let iv = UIImageView()
         iv.layer.masksToBounds = true
@@ -107,7 +106,7 @@ class LocalWeatherTableViewCell: UITableViewCell {
         contentView.addSubview(cellBackground)
         cellBackground.setAnchor(top: contentView.topAnchor, bottom: contentView.bottomAnchor, paddingBottom: 5)
         cellBackground.setCenterX(from: contentView)
-        cellBackground.setSize(width: 337, height: 80)
+        cellBackground.setSize(width: 337, height: 79)
         
         cellBackground.addSubview(localLabel)
         localLabel.setSize(height: 25)

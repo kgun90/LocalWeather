@@ -14,14 +14,14 @@ class MainViewController: UIViewController {
     let bag = DisposeBag()
     let weatherCell = "LocalWeatherTableViewCell"
     
-    let titleLabel: UILabel = {
+    private let titleLabel: UILabel = {
         let lbl = UILabel()
         lbl.text = "지역날씨"
         lbl.font = .systemFont(ofSize: 40, weight: .semibold)
         return lbl
     }()
     
-    lazy var weatherTableView: UITableView = {
+    private lazy var weatherTableView: UITableView = {
         let tbl = UITableView()
         tbl.translatesAutoresizingMaskIntoConstraints = false
         tbl.tableFooterView = UIView()
@@ -47,6 +47,12 @@ class MainViewController: UIViewController {
             (index, element, cell) in
             cell.local = element
         }.disposed(by: bag)
+        
+        weatherTableView.rx.itemSelected
+            .subscribe(onNext: { [weak self] indexPath in
+                let cell = self?.weatherTableView.cellForRow(at: indexPath) as? LocalWeatherTableViewCell
+                self?.moveToDetailWeather(cell?.local)
+            }).disposed(by: bag)
     }
 
     func localArray() -> Observable<[Local]> {
@@ -57,11 +63,17 @@ class MainViewController: UIViewController {
         return Observable.just(arr)
     }
     
+    func moveToDetailWeather(_ local: Local?) {
+        guard let local = local else { return }
+        let vc = DetailWeatherViewController(local: local)
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
     func interface() {
         view.addSubview(titleLabel)
         titleLabel.setSize(width: 145, height: 50)
-        
         titleLabel.setAnchor(top: view.topAnchor, right: view.rightAnchor, paddingTop: 100, paddingRight: 15)
+        
         view.addSubview(weatherTableView)
         weatherTableView.setAnchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 177.h)
         weatherTableView.setCenterX(from: view)

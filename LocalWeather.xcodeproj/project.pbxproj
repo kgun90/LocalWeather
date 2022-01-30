@@ -25,6 +25,7 @@
 		EB5BA5DA27A50D3E00C51B37 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5BA5D927A50D3E00C51B37 /* Log.swift */; };
 		EB5BA5DC27A5702F00C51B37 /* LocalWeatherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5BA5DB27A5702E00C51B37 /* LocalWeatherTableViewCell.swift */; };
 		EB5BA5DE27A64E9B00C51B37 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5BA5DD27A64E9B00C51B37 /* UIColor.swift */; };
+		EB5BA5E027A65B9D00C51B37 /* DetailWeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5BA5DF27A65B9D00C51B37 /* DetailWeatherViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		EB5BA5D927A50D3E00C51B37 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		EB5BA5DB27A5702E00C51B37 /* LocalWeatherTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalWeatherTableViewCell.swift; sourceTree = "<group>"; };
 		EB5BA5DD27A64E9B00C51B37 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		EB5BA5DF27A65B9D00C51B37 /* DetailWeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailWeatherViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				843A62AB27A2170D0056EB10 /* MainViewController.swift */,
+				EB5BA5DF27A65B9D00C51B37 /* DetailWeatherViewController.swift */,
 				EB5BA5DB27A5702E00C51B37 /* LocalWeatherTableViewCell.swift */,
 			);
 			path = View;
@@ -304,6 +307,7 @@
 				EB5BA5DC27A5702F00C51B37 /* LocalWeatherTableViewCell.swift in Sources */,
 				843A62AC27A2170D0056EB10 /* MainViewController.swift in Sources */,
 				843A62EC27A241110056EB10 /* Int.swift in Sources */,
+				EB5BA5E027A65B9D00C51B37 /* DetailWeatherViewController.swift in Sources */,
 				843A62A827A2170D0056EB10 /* AppDelegate.swift in Sources */,
 				843A62AA27A2170D0056EB10 /* SceneDelegate.swift in Sources */,
 				843A630327A3B3F50056EB10 /* WeatherModel.swift in Sources */,
