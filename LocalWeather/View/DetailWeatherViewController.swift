@@ -14,12 +14,6 @@ class DetailWeatherViewController: UIViewController {
     let local: Local
     let viewModel = WeatherViewModel()
     
-    private let titleLabel: UILabel = {
-        let lbl = UILabel()
-        lbl.text = "상세날씨"
-        lbl.font = .systemFont(ofSize: 40, weight: .semibold)
-        return lbl
-    }()
     
     private lazy var localLabel: UILabel = {
         let lbl = UILabel()
@@ -57,7 +51,8 @@ class DetailWeatherViewController: UIViewController {
     
     lazy var forecastButton: UIButton = {
         let btn = UIButton()
-        btn.setTitle("5일 예보 알아보기 >", for: .normal)
+        btn.setTitle("미래날씨 >", for: .normal)
+        btn.setTitleColor(.blue, for: .normal)
         return btn
     }()
     
@@ -133,14 +128,11 @@ class DetailWeatherViewController: UIViewController {
     }
     
     func moveToForecast() {
-
+        let vc = ForecastChartViewController(local: local)
+        navigationController?.pushViewController(vc, animated: true)
     }
     
-    func interface() {
-        view.addSubview(titleLabel)
-        titleLabel.setSize(width: 145, height: 50)
-        titleLabel.setAnchor(top: view.topAnchor, right: view.rightAnchor, paddingTop: 100, paddingRight: 15)
-        
+    func interface() {        
         view.addSubview(localLabel)
         localLabel.setSize(width: 375, height: 70)
         localLabel.setCenterX(from: view)

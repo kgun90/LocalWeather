@@ -22,4 +22,18 @@ class WeatherService {
             completion(res)
         }
     }
+    
+    static func getForecast(city: Local, completion: @escaping (Decodable?) -> Void) {
+        let path = Key.path + "/\(Route.forecast.rawValue)"
+        
+        let query = [
+            "appid": Key.secret,
+            "units": Key.units,
+            "lang": "kr",
+            "id": "\(city.code)"
+        ]
+        NetworkService(baseUrl: Key.url).request(path, method: .get, query: query, type: ForecastResponse.self) { res in
+            completion(res)
+        }        
+    }
 }

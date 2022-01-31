@@ -26,6 +26,8 @@
 		EB5BA5DC27A5702F00C51B37 /* LocalWeatherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5BA5DB27A5702E00C51B37 /* LocalWeatherTableViewCell.swift */; };
 		EB5BA5DE27A64E9B00C51B37 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5BA5DD27A64E9B00C51B37 /* UIColor.swift */; };
 		EB5BA5E027A65B9D00C51B37 /* DetailWeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5BA5DF27A65B9D00C51B37 /* DetailWeatherViewController.swift */; };
+		EB5BA5E227A66AEF00C51B37 /* ForecastChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5BA5E127A66AEF00C51B37 /* ForecastChartViewController.swift */; };
+		EB5BA5E427A66BC700C51B37 /* ForecastViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5BA5E327A66BC700C51B37 /* ForecastViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +54,8 @@
 		EB5BA5DB27A5702E00C51B37 /* LocalWeatherTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalWeatherTableViewCell.swift; sourceTree = "<group>"; };
 		EB5BA5DD27A64E9B00C51B37 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		EB5BA5DF27A65B9D00C51B37 /* DetailWeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailWeatherViewController.swift; sourceTree = "<group>"; };
+		EB5BA5E127A66AEF00C51B37 /* ForecastChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastChartViewController.swift; sourceTree = "<group>"; };
+		EB5BA5E327A66BC700C51B37 /* ForecastViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +117,7 @@
 			children = (
 				843A62AB27A2170D0056EB10 /* MainViewController.swift */,
 				EB5BA5DF27A65B9D00C51B37 /* DetailWeatherViewController.swift */,
+				EB5BA5E127A66AEF00C51B37 /* ForecastChartViewController.swift */,
 				EB5BA5DB27A5702E00C51B37 /* LocalWeatherTableViewCell.swift */,
 			);
 			path = View;
@@ -131,6 +136,7 @@
 			children = (
 				843A62EF27A242350056EB10 /* Service */,
 				843A630827A3D6E90056EB10 /* WeatherViewModel.swift */,
+				EB5BA5E327A66BC700C51B37 /* ForecastViewModel.swift */,
 				843A630A27A3D70B0056EB10 /* ViewModel.swift */,
 			);
 			path = ViewModel;
@@ -306,10 +312,12 @@
 				843A630527A3B69D0056EB10 /* Key.swift in Sources */,
 				EB5BA5DC27A5702F00C51B37 /* LocalWeatherTableViewCell.swift in Sources */,
 				843A62AC27A2170D0056EB10 /* MainViewController.swift in Sources */,
+				EB5BA5E427A66BC700C51B37 /* ForecastViewModel.swift in Sources */,
 				843A62EC27A241110056EB10 /* Int.swift in Sources */,
 				EB5BA5E027A65B9D00C51B37 /* DetailWeatherViewController.swift in Sources */,
 				843A62A827A2170D0056EB10 /* AppDelegate.swift in Sources */,
 				843A62AA27A2170D0056EB10 /* SceneDelegate.swift in Sources */,
+				EB5BA5E227A66AEF00C51B37 /* ForecastChartViewController.swift in Sources */,
 				843A630327A3B3F50056EB10 /* WeatherModel.swift in Sources */,
 				843A630B27A3D70B0056EB10 /* ViewModel.swift in Sources */,
 				843A62EE27A241630056EB10 /* Device.swift in Sources */,
