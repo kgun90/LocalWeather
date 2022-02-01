@@ -89,7 +89,6 @@ class LocalWeatherTableViewCell: UITableViewCell {
         
         output.weather.subscribe(onNext: { data in
             DispatchQueue.main.async {
-                
                 self.tempLabel.text = String(format: "%.1f℃", data.main.temp)
                 self.humidLabel.text = "\(data.main.humidity)%"
                 
@@ -104,33 +103,34 @@ class LocalWeatherTableViewCell: UITableViewCell {
     
     private func interface() {
         contentView.addSubview(cellBackground)
+        cellBackground.setSize(width: 337, height: 80)
         cellBackground.setAnchor(top: contentView.topAnchor, bottom: contentView.bottomAnchor, paddingBottom: 5)
         cellBackground.setCenterX(from: contentView)
-        cellBackground.setSize(width: 337, height: 79)
+        
         
         cellBackground.addSubview(localLabel)
         localLabel.setSize(height: 25)
         localLabel.setCenterY(from: cellBackground)
-        localLabel.setAnchor(left: cellBackground.leftAnchor, paddingLeft: 20)
+        localLabel.setAnchor(leading: cellBackground.leadingAnchor, paddingLeading: 20)
         
         cellBackground.addSubview(weatherImage)
         weatherImage.setSize(width: 50, height: 50)
         weatherImage.setCenterY(from: cellBackground)
-        weatherImage.setAnchor(right: cellBackground.rightAnchor, paddingRight: 20)
+        weatherImage.setAnchor(trailing: cellBackground.trailingAnchor, paddingTrailing: 20)
         
         
         cellBackground.addSubview(tempLabel)
-        tempLabel.setAnchor(bottom: cellBackground.centerYAnchor, right: weatherImage.leftAnchor)
+        tempLabel.setAnchor(bottom: cellBackground.centerYAnchor, trailing: weatherImage.leadingAnchor)
         tempLabel.setSize(height: 25)
         
         cellBackground.addSubview(humidLabel)
         humidLabel.setSize(height: 20)
-        humidLabel.setAnchor(top: cellBackground.centerYAnchor, right: weatherImage.leftAnchor)
+        humidLabel.setAnchor(top: cellBackground.centerYAnchor, trailing: weatherImage.leadingAnchor)
         
         cellBackground.addSubview(humidImage)
         humidImage.setSize(width: 16, height: 16)
         humidImage.setCenterY(from: humidLabel)
-        humidImage.setAnchor(right: humidLabel.leftAnchor, paddingRight: 3)
+        humidImage.setAnchor(trailing: humidLabel.leadingAnchor, paddingTrailing: 3)
         
        
     }

@@ -72,10 +72,10 @@ class MainViewController: UIViewController {
     func interface() {
         view.addSubview(titleLabel)
         titleLabel.setSize(width: 145, height: 50)
-        titleLabel.setAnchor(top: view.topAnchor, right: view.rightAnchor, paddingTop: 100, paddingRight: 15)
+        titleLabel.setAnchor(top: view.topAnchor, trailing: view.trailingAnchor, paddingTop: 100, paddingTrailing: 15)
         
         view.addSubview(weatherTableView)
-        weatherTableView.setAnchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 177.h)
+        weatherTableView.setAnchor(top: view.topAnchor, leading: view.leadingAnchor, bottom: view.bottomAnchor, trailing: view.trailingAnchor, paddingTop: 177.h)
         weatherTableView.setCenterX(from: view)
     }
 }

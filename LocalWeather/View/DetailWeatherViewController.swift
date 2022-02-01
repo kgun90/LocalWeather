@@ -140,11 +140,11 @@ class DetailWeatherViewController: UIViewController {
         
         view.addSubview(currentTempLable)
         currentTempLable.setSize(height: 25)
-        currentTempLable.setAnchor(top: localLabel.bottomAnchor, right: view.centerXAnchor, paddingRight: 5)
+        currentTempLable.setAnchor(top: localLabel.bottomAnchor, trailing: view.centerXAnchor, paddingTrailing: 5)
         
         view.addSubview(feelTempLable)
         feelTempLable.setSize(height: 25)
-        feelTempLable.setAnchor(top: localLabel.bottomAnchor, left: view.centerXAnchor, paddingLeft: 5)
+        feelTempLable.setAnchor(top: localLabel.bottomAnchor, leading: view.centerXAnchor, paddingLeading: 5)
         
         view.addSubview(descriptionLabel)
         descriptionLabel.setSize(width: 375, height: 60)
@@ -163,23 +163,23 @@ class DetailWeatherViewController: UIViewController {
         view.addSubview(maxTempLable)
         maxTempLable.setSize(height: 30)
         maxTempLable.setCenterY(from: minTempLable)
-        maxTempLable.setAnchor(right: minTempLable.leftAnchor, paddingRight: 5)
+        maxTempLable.setAnchor(trailing: minTempLable.leadingAnchor, paddingTrailing: 5)
         
         view.addSubview(humidLable)
         humidLable.setSize(height: 30)
         humidLable.setCenterY(from: minTempLable)
-        humidLable.setAnchor(left: minTempLable.rightAnchor, paddingLeft: 5)
+        humidLable.setAnchor(leading: minTempLable.trailingAnchor, paddingLeading: 5)
         
         view.addSubview(forecastButton)
         forecastButton.setSize(height: 25)
-        forecastButton.setAnchor(bottom: humidLable.topAnchor, right: humidLable.rightAnchor, paddingBottom: 3)
+        forecastButton.setAnchor(bottom: humidLable.topAnchor, trailing: humidLable.trailingAnchor, paddingBottom: 3)
         
         view.addSubview(pressureLable)
         pressureLable.setSize(height: 30)
-        pressureLable.setAnchor(top: minTempLable.bottomAnchor, right: view.centerXAnchor, paddingRight: 5)
+        pressureLable.setAnchor(top: minTempLable.bottomAnchor, trailing: view.centerXAnchor, paddingTrailing: 5)
         
         view.addSubview(speedLable)
         speedLable.setSize(height: 30)
-        speedLable.setAnchor(top: minTempLable.bottomAnchor, left: view.centerXAnchor, paddingLeft: 5)
+        speedLable.setAnchor(top: minTempLable.bottomAnchor, leading: view.centerXAnchor, paddingLeading: 5)
     }
 }
