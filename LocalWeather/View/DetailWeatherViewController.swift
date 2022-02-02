@@ -108,15 +108,15 @@ class DetailWeatherViewController: UIViewController {
         
         output.weather.subscribe(onNext: { data in
             DispatchQueue.main.async {
-                self.currentTempLable.text = String(format: "현재기온: %.1f℃", data.main.temp)
-                self.feelTempLable.text = String(format: "체감기온: %.1f℃", data.main.feelsLike)
+                self.currentTempLable.text = String(format: "현재기온: %.1f℃", data.main.temp.toC)
+                self.feelTempLable.text = String(format: "체감기온: %.1f℃", data.main.feelsLike.toC)
                 self.descriptionLabel.text = data.weather[0].weatherDescription
                 
                 self.weatherImage.image = UIImage(systemName: WeatherImage(id: data.weather[0].id).name)
                 self.weatherImage.tintColor = WeatherImage(id: data.weather[0].id).color
                 
-                self.maxTempLable.text = String(format: "최고: %.1f℃", data.main.tempMax)
-                self.minTempLable.text = String(format: "최저: %.1f℃", data.main.tempMin)
+                self.maxTempLable.text = String(format: "최고: %.1f℃", data.main.tempMax.toC)
+                self.minTempLable.text = String(format: "최저: %.1f℃", data.main.tempMin.toC)
                 self.humidLable.text = "습도: \(data.main.humidity)%"
                 
                 self.pressureLable.text = "기압: \(data.main.pressure)hPa"

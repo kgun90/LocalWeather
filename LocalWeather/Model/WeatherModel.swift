@@ -7,6 +7,12 @@
 
 import UIKit
 
+struct LocalWeatherModel {
+    let local: Local
+    let res: WeatherResponse
+    let mode: TempMode
+}
+
 // MARK: - ErrorResponse
 struct ErrorResponse: Codable {
     let cod: Int

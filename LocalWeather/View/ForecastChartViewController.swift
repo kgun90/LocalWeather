@@ -65,6 +65,12 @@ class ForecastChartViewController: UIViewController {
         interface()
     }
     
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        coordinator.animate(alongsideTransition: nil) { _ in
+            self.chart.rotate()
+        }
+    }
     
     func bind() {
         let input = ForecastViewModel.Input(local: local)
@@ -76,10 +82,10 @@ class ForecastChartViewController: UIViewController {
     func interface() {
         view.addSubview(titleLabel)
         titleLabel.setSize(width: 145, height: 50)
-        titleLabel.setAnchor(top: view.topAnchor, trailing: view.trailingAnchor, paddingTop: 100, paddingTrailing: 15)
+        titleLabel.setAnchor(top: view.topAnchor, trailing: view.trailingAnchor, paddingTop: 70, paddingTrailing: 15)
         
         view.addSubview(chart)
-        chart.setAnchor(top: titleLabel.bottomAnchor, leading: view.leadingAnchor, bottom: view.bottomAnchor, trailing: view.trailingAnchor, paddingTop: 10, paddingBottom: 100)
+        chart.setAnchor(top: titleLabel.bottomAnchor, leading: view.safeAreaLayoutGuide.leadingAnchor, bottom: view.bottomAnchor, trailing: view.safeAreaLayoutGuide.trailingAnchor, paddingTop: 10, paddingBottom: 100)
         
         view.addSubview(humidLabel)
         humidLabel.setAnchor(top: chart.bottomAnchor, leading: view.leadingAnchor, paddingLeading: 10)

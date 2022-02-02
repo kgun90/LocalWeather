@@ -13,7 +13,7 @@ class WeatherService {
         
         let query = [
             "appid": Key.secret,
-            "units": Key.units,
+//            "units": Key.units,
             "lang": "kr",
             "id": "\(city.code)"
         ]

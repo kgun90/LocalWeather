@@ -8,11 +8,14 @@
 import UIKit
 import RxSwift
 
+enum TempMode {
+    case cel, fah
+}
+
 class LocalWeatherTableViewCell: UITableViewCell {
     let bag = DisposeBag()
-    let viewModel = WeatherViewModel()
     
-    var local: Local? {
+    var data: LocalWeatherModel? {
         didSet { setData() }
     }
     
@@ -70,6 +73,8 @@ class LocalWeatherTableViewCell: UITableViewCell {
        return lbl
     }()
     
+    var tempMode: TempMode = .cel
+    var temp: Double = 0
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -82,22 +87,16 @@ class LocalWeatherTableViewCell: UITableViewCell {
     
         
     private func setData() {
-        guard let local = local else { return }
+        guard let data = data else { return }
         
-        let input = WeatherViewModel.Input(local: local)
-        let output = viewModel.transform(input: input)
+        self.temp = data.res.main.temp
+        self.tempLabel.text = data.mode == .cel ? String(format: "%.1f℃", self.temp.toC) : String(format: "%.1f℉", self.temp.toF)
+        self.humidLabel.text = "\(data.res.main.humidity)%"
         
-        output.weather.subscribe(onNext: { data in
-            DispatchQueue.main.async {
-                self.tempLabel.text = String(format: "%.1f℃", data.main.temp)
-                self.humidLabel.text = "\(data.main.humidity)%"
-                
-                self.weatherImage.image = UIImage(systemName: WeatherImage(id: data.weather[0].id).name)
-                self.weatherImage.tintColor = WeatherImage(id: data.weather[0].id).color
-            }
-        }).disposed(by: bag)
+        self.weatherImage.image = UIImage(systemName: WeatherImage(id: data.res.weather[0].id).name)
+        self.weatherImage.tintColor = WeatherImage(id: data.res.weather[0].id).color
         
-        localLabel.text = local.name
+        localLabel.text = data.local.name
     }   
     
     
@@ -131,11 +130,8 @@ class LocalWeatherTableViewCell: UITableViewCell {
         humidImage.setSize(width: 16, height: 16)
         humidImage.setCenterY(from: humidLabel)
         humidImage.setAnchor(trailing: humidLabel.leadingAnchor, paddingTrailing: 3)
-        
-       
     }
     
-
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
